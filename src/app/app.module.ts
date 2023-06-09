@@ -12,6 +12,7 @@ import { ContactMePageComponent } from './contact-me-page/contact-me-page.compon
 import { NavigationComponent } from './navigation/navigation.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LogoComponent } from './logo/logo.component';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LogoComponent } from './logo/logo.component';
     NavigationComponent,
     PageNotFoundComponent,
     LogoComponent,
+    AboutMeComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { LogoComponent } from './logo/logo.component';
       { path: 'projects', component: ProjectsPageComponent },
       { path: 'services', component: ServicesPageComponent },
       { path: 'contact', component: ContactMePageComponent },
+      { path: 'about', component: AboutMeComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),

@@ -1,0 +1,23 @@
+.banner {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo {
+    max-height: 60px;
+    height: 100%;
+    width: auto;
+    padding: 8px 0 ;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}

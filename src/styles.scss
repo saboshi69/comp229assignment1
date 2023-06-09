@@ -1,13 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-$bgColor: #E8F6EF;
-$bg2Color: #FFE194;
-$mainColor: #4C4C6D;
-$secondColor: #1B9C85;
+@import 'color';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
+/* Global Styles */
 html {
     padding: 0;
     margin: 0;
 }
+
+body, div, p, span, a, h1, h2, h3, h4, h5, input, button, label, form, section, footer, header {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}       
 
 body {
     background-color: $bg2Color;
@@ -16,6 +19,8 @@ body {
 }
 
 section, footer, header {
+    display: block;
+    overflow: hidden;
     margin-left: auto ;
     margin-right: auto ;
     max-width: 1024px;
@@ -25,6 +30,24 @@ section, footer, header {
     background-color: $bgColor;
 }
 
+section.no-padding {
+    padding: 0;
+}
+
+h3 {
+    font-size: 26px;
+    color: $mainColor;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
 p {
     color: $mainColor;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+a {
+    color: $secondColor;
+    text-decoration: dotted;
 }
