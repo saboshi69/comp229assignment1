@@ -1,1 +1,30 @@
-<p>contact-me-page works!</p>
+<!-- First Name, Last Name, Contact Number, Email Address, Message, etc. -->
+<section>
+  <div class="info">
+    <p>
+      Feel free to get in touch with me using the following contact information:
+    </p>
+
+    <p>Email: <a href="mailto:jj9898@gmail.com">jj9898@gmail.com</a></p>
+
+    <p>
+      I look forward to hearing from you and discussing any inquiries,
+      collaboration opportunities, or projects you may have.
+    </p>
+  </div>
+  <br />
+  <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName" />
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName" />
+    <label for="contact">Contact Number: </label>
+    <input id="contact" type="text" formControlName="contactNumber" />
+    <label for="email">Email: </label>
+    <input id="email" type="text" formControlName="email" />
+    <label for="message">Message: </label>
+    <textarea id="message" type="text" formControlName="message"></textarea>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </form>
+</section>

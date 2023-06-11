@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -11,7 +13,6 @@ import { ServicesPageComponent } from './services-page/services-page.component';
 import { ContactMePageComponent } from './contact-me-page/contact-me-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LogoComponent } from './logo/logo.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 
 @NgModule({
@@ -25,11 +26,12 @@ import { AboutMeComponent } from './about-me/about-me.component';
     ContactMePageComponent,
     NavigationComponent,
     PageNotFoundComponent,
-    LogoComponent,
     AboutMeComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    NgOptimizedImage,
     RouterModule.forRoot([
       { path: 'home', component: HomePageComponent },
       { path: 'projects', component: ProjectsPageComponent },

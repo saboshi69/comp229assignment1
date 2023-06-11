@@ -7,7 +7,7 @@ html {
     margin: 0;
 }
 
-body, div, p, span, a, h1, h2, h3, h4, h5, input, button, label, form, section, footer, header {
+body, div, p, span, a, h1, h2, h3, h4, h5, input, button, label, form, section, footer, header, textarea, li  {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }       
@@ -50,4 +50,12 @@ p {
 a {
     color: $secondColor;
     text-decoration: dotted;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+input, li {
+    color: $mainColor;
 }
