@@ -1,3 +1,7 @@
+// File: app.module.ts
+// Student's Name: Wan Kei Hui
+// Student ID: 301266228
+// Date: 11-6-2023
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
