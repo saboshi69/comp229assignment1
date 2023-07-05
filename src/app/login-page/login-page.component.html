@@ -1,0 +1,13 @@
+<!-- First Name, Last Name, Contact Number, Email Address, Message, etc. -->
+<section>
+  <br />
+  <form class="contact-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login-panel">
+      <label for="first-name">Username: </label>
+      <input id="first-name" type="text" formControlName="username" />
+      <label for="last-name">Password: </label>
+      <input id="last-name" type="text" formControlName="password" />
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </div>
+  </form>
+</section>
