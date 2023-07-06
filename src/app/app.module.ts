@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -23,6 +24,7 @@ import { MapComponent } from './navigation/map/map.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { BusinessListPageComponent } from './business-list-page/business-list-page.component';
 import { UpdateBusinessPageComponent } from './update-business-page/update-business-page.component';
+import { BusinessListItemComponent } from './business-list-page/business-list-item/business-list-item.component';
 
 @NgModule({
   declarations: [
@@ -41,9 +43,11 @@ import { UpdateBusinessPageComponent } from './update-business-page/update-busin
     LoginPageComponent,
     BusinessListPageComponent,
     UpdateBusinessPageComponent,
+    BusinessListItemComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     NgOptimizedImage,
     RouterModule.forRoot([
@@ -53,6 +57,7 @@ import { UpdateBusinessPageComponent } from './update-business-page/update-busin
       { path: 'contact', component: ContactMePageComponent },
       { path: 'about', component: AboutMeComponent },
       { path: 'login', component: LoginPageComponent },
+      { path: 'business', component: BusinessListPageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),

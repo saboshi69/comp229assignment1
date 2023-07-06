@@ -1,1 +1,9 @@
-<p>business-list-page works!</p>
+<section>
+  <p>Business List:</p>
+  <div *ngFor="let business of businesses">
+    <app-business-list-item
+      [business]="business"
+      (delete)="onDelete($event)"
+    ></app-business-list-item>
+  </div>
+</section>
