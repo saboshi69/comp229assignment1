@@ -3,7 +3,7 @@
   <p>Contact Number: {{ business.phone }}</p>
   <p>Email: {{ business.email }}</p>
   <div class="buttons">
-    <button routerLink="/update-business/{{ business._id }}">Update</button>
+    <button routerLink="/business/{{ business._id }}/update">Update</button>
     <button (click)="onDelete()">Delete</button>
   </div>
 </div>

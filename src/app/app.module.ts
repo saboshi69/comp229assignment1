@@ -25,6 +25,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { BusinessListPageComponent } from './business-list-page/business-list-page.component';
 import { UpdateBusinessPageComponent } from './update-business-page/update-business-page.component';
 import { BusinessListItemComponent } from './business-list-page/business-list-item/business-list-item.component';
+import { BusinessUpdateComponent } from './business-list-page/business-update/business-update.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { BusinessListItemComponent } from './business-list-page/business-list-it
     BusinessListPageComponent,
     UpdateBusinessPageComponent,
     BusinessListItemComponent,
+    BusinessUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +60,7 @@ import { BusinessListItemComponent } from './business-list-page/business-list-it
       { path: 'about', component: AboutMeComponent },
       { path: 'login', component: LoginPageComponent },
       { path: 'business', component: BusinessListPageComponent },
+      { path: 'business/:id/update', component: BusinessUpdateComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),
