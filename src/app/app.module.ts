@@ -2,12 +2,14 @@
 // Student's Name: Wan Kei Hui
 // Student ID: 301266228
 // Date: 11-6-2023
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from '../../jwt.interceptor';
+import { AuthGuard } from './ng-guard/auth.guard';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
@@ -59,13 +61,20 @@ import { BusinessUpdateComponent } from './business-list-page/business-update/bu
       { path: 'contact', component: ContactMePageComponent },
       { path: 'about', component: AboutMeComponent },
       { path: 'login', component: LoginPageComponent },
-      { path: 'business', component: BusinessListPageComponent },
+      {
+        path: 'business',
+        component: BusinessListPageComponent,
+        canActivate: [AuthGuard],
+      },
       { path: 'business/:id/update', component: BusinessUpdateComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
     ]),
   ],
-  providers: [],
+  exports: [RouterModule],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

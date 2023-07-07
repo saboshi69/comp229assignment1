@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service'; // assuming login.service.ts is in services folder
 
 @Component({
   selector: 'app-login-page',
@@ -11,12 +13,29 @@ export class LoginPageComponent {
     username: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
+
+  constructor(private loginService: LoginService, private router: Router) {}
+
   onSubmit() {
-    console.warn(this.loginForm.value);
-    // reset the password field
-    const passwordControl = this.loginForm.get('password');
-    if (passwordControl) {
-      passwordControl.reset();
+    const username = this.loginForm.get('username');
+    const password = this.loginForm.get('password');
+    if (this.loginForm.valid && username?.value && password?.value) {
+      this.loginService.login(username?.value, password?.value).subscribe(
+        (data) => {
+          if (data.success) {
+            // redirect to business page after successful login
+            this.router.navigate(['/business']);
+          } else {
+            // handle login failure
+            alert('Invalid username or password');
+            password?.reset();
+          }
+        },
+        (error) => {
+          // handle error
+          console.error(error);
+        }
+      );
     }
   }
 }

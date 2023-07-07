@@ -16,6 +16,7 @@ export class BusinessListPageComponent implements OnInit {
 
   loadBusinesses() {
     this.businessService.getBusinesses().subscribe((businesses) => {
+      businesses = businesses.sort((a, b) => a.name.localeCompare(b.name));
       this.businesses = businesses;
     });
   }
