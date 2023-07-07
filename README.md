@@ -1,27 +1,27 @@
-# Ass
+### My Assignment 2 Angular Frontend App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+This is a frontend application built with Angular. It serves as an interface for managing business information. It allows users to view, create, update, and delete businesses. It also features user authentication.
 
-## Development server
+### Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+User login: Authenticate users and protect certain routes to be only accessible by authenticated users.
+Business management: CRUD operations for businesses including creating, reading, updating, and deleting.
+Prerequisites
+Node.js: Make sure you have Node.js installed on your system. You can download it from here.
+Angular CLI: Install the Angular CLI globally using the following command: `npm install -g @angular/cli`
 
-## Code scaffolding
+### Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Clone the repository: `https://github.com/saboshi69/comp229assignment1.git`. It is still name as assignment 1 but it is actually 2 as we reuse most of the component
 
-## Build
+### Install the dependencies:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Navigate into the directory where you cloned the repository and install the dependencies using npm with `npm install`
 
-## Running unit tests
+### Config your Environment folder
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The default setting is under src/environments. You can change you backend url there.
 
-## Running end-to-end tests
+###
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Start the application: `npm start`
