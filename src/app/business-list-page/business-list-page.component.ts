@@ -22,6 +22,8 @@ export class BusinessListPageComponent implements OnInit {
   }
 
   onDelete(id: string) {
-    this.businesses = this.businesses.filter((b) => b._id !== id);
+    this.businesses = this.businesses
+      .filter((b) => b._id !== id)
+      .sort((a, b) => a.name.localeCompare(b.name));
   }
 }
