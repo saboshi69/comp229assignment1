@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 export interface Business {
   _id: any;
@@ -13,7 +14,8 @@ export interface Business {
   providedIn: 'root',
 })
 export class BusinessService {
-  private apiUrl = 'http://localhost:3000/business'; // replace with your API endpoint
+  // api endpoint
+  private apiUrl = `${environment.apiUrl}/business`;
 
   constructor(private http: HttpClient) {}
 
